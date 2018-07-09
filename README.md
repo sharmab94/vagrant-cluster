@@ -8,7 +8,8 @@ SETUP:
 2. Install VirtualBox
 3. Clone the project locally: git clone https://github.com/sharmab94/vagrant-cluster.git
 4. Move into the project directory: cd vagrant-cluster
-5. Provision the virtual machines using Vagrant: vagrant up
+5. Install the vbguest plugin: vagrant plugin install vagrant-vbguest
+6. Provision the virtual machines using Vagrant: vagrant up
 
 
 CONFIGURATION:
