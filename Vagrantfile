@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "redis_master" do |redis_master|
     redis_master.vm.box = "centos/7"
-    redis_master.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: vagrantConfig['ip']
+    redis_master.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: vagrantConfig['ip1']
     redis_master.vm.network "forwarded_port", guest: 8500, host: 8500
     redis_master.vm.provision :shell, :path => "install_redis.sh"
     redis_master.vm.provision :shell, :path => "setup_master.sh"
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "redis_slave1" do |redis_slave1|
     redis_slave1.vm.box = "centos/7"
-    redis_slave1.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    redis_slave1.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: vagrantConfig['ip2']
     redis_slave1.vm.provision :shell, :path => "install_redis.sh"
     redis_slave1.vm.provision :shell, :path => "setup_slave.sh"
     redis_slave1.vm.provision :shell, :path => "verify.sh"
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "redis_slave2" do |redis_slave2|
     redis_slave2.vm.box = "centos/7"
-    redis_slave2.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    redis_slave2.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: vagrantConfig['ip3']
     redis_slave2.vm.provision :shell, :path => "install_redis.sh"
     redis_slave2.vm.provision :shell, :path => "setup_slave.sh"
     redis_slave2.vm.provision :shell, :path => "verify.sh"
