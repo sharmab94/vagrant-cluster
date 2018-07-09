@@ -17,11 +17,11 @@ sudo cp /vagrant/consul.service  consul.service
 sudo chmod 644 consul.service
 sudo systemctl daemon-reload
 echo "consul has been installed as a systemd service"
-
+sudo systemctl enable consul.service
 # start consul service
-sudo systemctl start consul
+sudo systemctl start consul.service
 echo "consul systemd service started"
-sudo /usr/bin/consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul -bind 172.20.10.201 &
+#sudo /usr/bin/consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul -bind 172.20.10.201 -join 172.20.10.200 &
 wait
 echo -ne "n/"
 echo "running consul members check"

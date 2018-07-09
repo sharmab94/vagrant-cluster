@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
     redis_slave1.vm.provision :shell, :path => "install_redis.sh"
     redis_slave1.vm.provision :shell, :path => "setup_slave.sh"
     redis_slave1.vm.provision :shell, :path => "verify.sh"
+    redis_slave1.vm.provision :shell, :path => "install_consul_client1.sh"
   end
 
   config.vm.define "redis_slave2" do |redis_slave2|
@@ -37,6 +38,7 @@ Vagrant.configure("2") do |config|
     redis_slave2.vm.provision :shell, :path => "install_redis.sh"
     redis_slave2.vm.provision :shell, :path => "setup_slave.sh"
     redis_slave2.vm.provision :shell, :path => "verify.sh"
+    redis_slave2.vm.provision :shell, :path => "install_consul_client2.sh"
   end
 
   config.vm.provider :virtualbox do |vb|
