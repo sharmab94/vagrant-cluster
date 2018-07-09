@@ -21,7 +21,7 @@ echo "consul has been installed as a systemd service"
 # start consul service
 sudo systemctl start consul
 echo "consul systemd service started"
-sudo /usr/bin/consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul -bind 172.20.10.200 &
+sudo /usr/bin/consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul -bind 172.20.10.202 &
 wait
 echo -ne "n/"
 echo "running consul members check"
