@@ -51,7 +51,7 @@ KNOWN ISSUES:
 If you are in a different network range (ex. 192.168.1.10, 10.0.0.0)
   1. Make sure to update Vagrant.config.yml with the correct ip of the network range you are in.
   2. Make sure to update the setup_slave.sh script, line 5 for the corresponding master ip. (current ip in script: 172.20.10.200)
- 
+-Consul Service: #todo: need to start as a service in the install_consul scripts
 
  ADDITIONAL INFO:
  ==============
