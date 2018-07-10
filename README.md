@@ -39,7 +39,8 @@ CONSUL:
 
 Validation for Consul Agent:
 -Runs the consul members check, should return something like:
-consul members check
+
+consul members check:
     redis_master: Node                   Address             Status  Type    Build  Protocol  DC   Segment
     redis_master: localhost.localdomain  172.20.10.200:8301  alive   server  1.2.0  2         dc1  <all>
     redis_master: done
@@ -47,11 +48,16 @@ consul members check
 KNOWN ISSUES:
 ==============
 -Network:
+---------
 - Switching to a different range of network may cause issues. By default, the ip of the Vagrant master is set to: 172.20.10.200 in the Vagrant.config.yml.
 If you are in a different network range (ex. 192.168.1.10, 10.0.0.0)
   1. Make sure to update Vagrant.config.yml with the correct ip of the network range you are in.
   2. Make sure to update the setup_slave.sh script, line 5 for the corresponding master ip. (current ip in script: 172.20.10.200)
--Consul Service: #todo: need to start as a service in the install_consul scripts
+
+
+-Consul Service:
+---------
+- Todo: need to start as a service in the install_consul scripts
 
  ADDITIONAL INFO:
  ==============
