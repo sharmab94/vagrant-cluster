@@ -21,7 +21,7 @@ echo "consul has been installed as a systemd service"
 # start consul service
 sudo systemctl start consul
 echo "consul systemd service started"
-#Process is getting hung, need to figure out how to exit process
+#Process is getting hung, need to figure out how to exit process, #todo: need to start as a service
 sudo /usr/bin/consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul -bind 172.20.10.201 -join 172.20.10.200 &
 wait
 echo -ne "n/"
